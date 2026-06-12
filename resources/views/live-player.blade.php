@@ -70,6 +70,16 @@
             background: rgba(255, 255, 255, 0.14);
         }
 
+        button:focus-visible,
+        iframe:focus-visible {
+            outline: 4px solid #f6d365;
+            outline-offset: 4px;
+        }
+
+        button:focus-visible {
+            background: rgba(255, 255, 255, 0.18);
+        }
+
         main {
             width: min(1180px, 100%);
             margin: 0 auto;
@@ -167,6 +177,7 @@
                 <iframe
                     src="{{ $playerUrl }}"
                     title="FIFA Live Stream Player"
+                    tabindex="0"
                     allow="autoplay; fullscreen; picture-in-picture"
                     allowfullscreen
                     referrerpolicy="strict-origin-when-cross-origin"
@@ -182,5 +193,6 @@
             </div>
         </section>
     </main>
+    <script src="{{ asset('js/tv-remote.js') }}"></script>
 </body>
 </html>

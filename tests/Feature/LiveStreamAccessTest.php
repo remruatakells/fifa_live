@@ -42,7 +42,8 @@ class LiveStreamAccessTest extends TestCase
             ->assertOk()
             ->assertSee('FIFA Live Stream')
             ->assertSee('Test Viewer')
-            ->assertSee('https://player.castr.com/live_0c20d4f0666e11f1a569db35c9fe0782');
+            ->assertSee('https://player.castr.com/live_0c20d4f0666e11f1a569db35c9fe0782')
+            ->assertSee('js/tv-remote.js');
     }
 
     public function test_invalid_user_api_key_does_not_create_visitor(): void
@@ -113,7 +114,8 @@ class LiveStreamAccessTest extends TestCase
 
         $this->get('/admin/login')
             ->assertOk()
-            ->assertSee('API access token');
+            ->assertSee('API access token')
+            ->assertSee('js/tv-remote.js');
 
         $this->get('/admin/visitors')
             ->assertRedirect('/admin/login');
@@ -160,6 +162,7 @@ class LiveStreamAccessTest extends TestCase
         $this->get('/live')
             ->assertOk()
             ->assertSee('Access Blocked')
-            ->assertSee('No access');
+            ->assertSee('No access')
+            ->assertSee('js/tv-remote.js');
     }
 }

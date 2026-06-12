@@ -78,6 +78,12 @@
             box-shadow: 0 0 0 3px rgba(88, 214, 141, 0.18);
         }
 
+        input:focus-visible,
+        button:focus-visible {
+            outline: 4px solid #f6d365;
+            outline-offset: 4px;
+        }
+
         .error {
             margin-top: 6px;
             color: #ffb4a8;
@@ -102,11 +108,30 @@
             background: #62e798;
         }
 
+        button:focus-visible {
+            background: #7df0aa;
+        }
+
         .note {
             margin-top: 16px;
             margin-bottom: 0;
             font-size: 0.92rem;
             color: #aebbb5;
+        }
+
+        @media (min-width: 900px) {
+            body {
+                font-size: 18px;
+            }
+
+            .panel {
+                width: min(100%, 520px);
+            }
+
+            input,
+            button {
+                min-height: 56px;
+            }
         }
     </style>
 </head>
@@ -157,5 +182,6 @@
             <p class="note">Your API key is checked before access and only a hash is stored.</p>
         </section>
     </main>
+    <script src="{{ asset('js/tv-remote.js') }}"></script>
 </body>
 </html>

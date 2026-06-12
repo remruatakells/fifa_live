@@ -118,6 +118,13 @@
             font: inherit;
         }
 
+        input:focus-visible,
+        button:focus-visible,
+        a:focus-visible {
+            outline: 4px solid #f6d365;
+            outline-offset: 3px;
+        }
+
         button {
             min-height: 38px;
             border: 0;
@@ -139,8 +146,23 @@
             color: #fff;
         }
 
+        button:focus-visible {
+            filter: brightness(1.12);
+        }
+
         nav {
             margin-top: 16px;
+        }
+
+        @media (min-width: 900px) {
+            body {
+                font-size: 17px;
+            }
+
+            input,
+            button {
+                min-height: 46px;
+            }
         }
     </style>
 </head>
@@ -217,5 +239,6 @@
             {{ $visitors->links() }}
         </nav>
     </main>
+    <script src="{{ asset('js/tv-remote.js') }}"></script>
 </body>
 </html>

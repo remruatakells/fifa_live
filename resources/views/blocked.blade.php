@@ -60,6 +60,26 @@
             font-weight: 800;
             padding: 0 16px;
         }
+
+        button:focus-visible {
+            outline: 4px solid #f6d365;
+            outline-offset: 4px;
+            background: #ffffff;
+        }
+
+        @media (min-width: 900px) {
+            body {
+                font-size: 18px;
+            }
+
+            .panel {
+                width: min(100%, 520px);
+            }
+
+            button {
+                min-height: 54px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -76,5 +96,6 @@
             <button type="submit">Use Different Details</button>
         </form>
     </main>
+    <script src="{{ asset('js/tv-remote.js') }}"></script>
 </body>
 </html>

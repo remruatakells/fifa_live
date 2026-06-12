@@ -68,6 +68,12 @@
             outline: none;
         }
 
+        input:focus-visible,
+        button:focus-visible {
+            outline: 4px solid #f6d365;
+            outline-offset: 4px;
+        }
+
         .error {
             margin: 6px 0 0;
             color: #b92818;
@@ -85,6 +91,25 @@
             cursor: pointer;
             font: inherit;
             font-weight: 900;
+        }
+
+        button:focus-visible {
+            background: #21904d;
+        }
+
+        @media (min-width: 900px) {
+            body {
+                font-size: 18px;
+            }
+
+            main {
+                width: min(100%, 500px);
+            }
+
+            input,
+            button {
+                min-height: 56px;
+            }
         }
     </style>
 </head>
@@ -107,5 +132,6 @@
             <button type="submit">Open Admin Panel</button>
         </form>
     </main>
+    <script src="{{ asset('js/tv-remote.js') }}"></script>
 </body>
 </html>
